@@ -24,12 +24,10 @@ if [[ $os == "Darwin" ]]; then
             binutils \
             coreutils \
             git \
-            gpg \
-            gpg-agent \
+	    gnupg \
             grc \
             htop-osx \
             iftop \
-            macvim \
             most \
             openssl \
             pinentry-mac \
@@ -41,7 +39,6 @@ if [[ $os == "Darwin" ]]; then
             wget \
             zsh
 
-       brew linkapps macvim
 
        echo "Brew cleanup"
        brew cleanup
@@ -52,23 +49,16 @@ if [[ $os == "Darwin" ]]; then
        fi
 
        echo "Installing brew cask"
-       brew install caskroom/cask/brew-cask
 
        echo "Installing brew cask packages"
-       brew cask install \
-           google-chrome \
-           iterm2 \
-           sequel-pro \
-           spotify
 
        echo "Installing brew cask fonts"
-       brew tap caskroom/fonts
+       brew tap homebrew/cask-fonts
        brew cask install \
            font-source-code-pro
 
        echo "Brew cleanup"
        brew cleanup
-       brew cask cleanup
 
     else
         echo "Homebrew is already installed"

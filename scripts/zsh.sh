@@ -26,7 +26,6 @@ then
         echo "Installing Oh my zsh:"
         curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
         # zshrc file
-        ln -sfn ~/.dotfiles/configs/zshrc ~/.zshrc
         source ~/.zshrc
         git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     else

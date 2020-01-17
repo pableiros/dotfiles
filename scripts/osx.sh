@@ -25,9 +25,6 @@ os=`uname`
     ###############################################################################
 
     echo -e "* Set computer name (as done via System Preferences → Sharing)"
-    sudo scutil --set ComputerName "0x4B1D"
-    sudo scutil --set HostName "0x4B1D"
-    sudo scutil --set LocalHostName "0x4B1D"
 
     echo -e "* Disable Guest user"
     sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
@@ -35,8 +32,6 @@ os=`uname`
     echo -e "* Disable System UI Audio Sound Effects"
     defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
-    echo -e "* Set Clock to 12 hours"
-    defaults write com.apple.menuextra.clock "DateFormat" "h:mm"
 
     echo -e "* Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
     for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
@@ -71,8 +66,6 @@ os=`uname`
     defaults write NSGlobalDomain KeyRepeat -int 0
 
     echo -e "* Use scroll gesture with the Ctrl (^) modifier key to zoom"
-    defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-    defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
     echo -e "* Disable press-and-hold for keys in favor of key repeat"
     defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -80,8 +73,6 @@ os=`uname`
     echo -e "* Set a blazingly fast keyboard repeat rate"
     defaults write NSGlobalDomain KeyRepeat -int 0
 
-    echo -e "* Follow the keyboard focus while zoomed in"
-    defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
     echo -e "* Set language and text formats"
     # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
@@ -161,7 +152,6 @@ os=`uname`
     defaults write com.apple.dock mineffect -string "scale"
 
     echo -e "* Minimize windows into their application’s icon"
-    defaults write com.apple.dock minimize-to-application -bool true
 
     echo -e "* Enable spring loading for all Dock items"
     defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
@@ -190,7 +180,6 @@ os=`uname`
     defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
     echo -e "* Disable local Time Machine backups"
-    hash tmutil &> /dev/null && sudo tmutil disablelocal
 
     ###############################################################################
     # Activity Monitor                                                            #

@@ -38,7 +38,6 @@ then
         pearofducks/ansible-vim
         scrooloose/nerdtree
         terryma/vim-multiple-cursors
-        tomlion/vim-solidity
         tpope/vim-fugitive
         vim-airline/vim-airline
         vim-airline/vim-airline-themes
@@ -65,11 +64,11 @@ then
     done
 
     # vimrc file
-    ln -sfn ~/.dotfiles/configs/vimrc ~/.vimrc
-    ln -sfn ~/.dotfiles/configs/gvimrc ~/.gvimrc
+    cp ../configs/vimrc ~/.vimrc
+    cp ../configs/gvimrc ~/.gvimrc
 
     # Dockerfile syntax
-    ln -sfn ~/.dotfiles/init/Dockerfile ~/.vim/bundle
+    cp -r ../init/Dockerfile ~/.vim/bundle
 
     echo -e "Done\n"
 else

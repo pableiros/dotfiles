@@ -3,7 +3,7 @@
 # Git
 #
 # http://git-scm.com/
-# Distributed version control system 
+# Distributed version control system
 #
 set -e
 
@@ -15,10 +15,8 @@ then
     echo "Setting git configs"
 
     # Git settings
-    git config --global user.name "Gerardo Rochín"
-    git config --global user.email gerardorochin@gmail.com
-    git config --global commit.gpgsign true
-    git config --global user.signingkey 02DB02B7
+    git config --global user.name "Pablo Bórquez"
+    git config --global user.email pablo.borquez@coppel.com
 
     git config --global alias.graph "log --graph --color --pretty=format:'%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n'"
     git config --global alias.l "log --pretty=oneline -n 20 --graph --abbrev-commit"
@@ -33,6 +31,8 @@ then
     git config --global color.status.untracked "yellow"
 
     git config --global core.editor "vim"
+
+    git config --global pager.branch false
 
     echo -e "Done\n"
 else
