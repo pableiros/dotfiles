@@ -25,7 +25,7 @@ if [[ $os == "Darwin" ]]; then
             coreutils \
             git \
             gpg \
-            gpg-agent \
+            gnupg \
             grc \
             htop-osx \
             iftop \
@@ -41,7 +41,7 @@ if [[ $os == "Darwin" ]]; then
             wget \
             zsh
 
-       brew linkapps macvim
+       brew cask install macvim
 
        echo "Brew cleanup"
        brew cleanup
